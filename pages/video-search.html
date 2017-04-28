@@ -1,0 +1,22 @@
+<p>
+    <a href='/'>Back to Search</a>
+</p>
+
+<h3>Search Results For "{{ searchTerm }}"</h3>
+<hr />
+
+<div ng-repeat='v in videoResult.items'>
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <iframe id="player" type="text/html" width="640" height="390"
+              ng-src='{{ getIframeSrc(v.id.videoId) }}'
+              frameborder="0">
+            </iframe>
+            <!-- <a class="thumbnail">
+              <img ng-attr-id="{{ v.id.videoId }}"
+                   ng-src="{{ v.snippet.thumbnails.default.url }}"
+                   ng-click="playVideo($event)" >
+            </a> -->
+        </div>
+    </div>
+</div>
